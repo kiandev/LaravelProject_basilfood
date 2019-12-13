@@ -1,0 +1,38 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateBasilsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('basils', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('title');
+            $table->text('text');
+            $table->text('image');
+            $table->text('site');
+            $table->text('email');
+            $table->text('instagram');
+            $table->string('phone');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('basils');
+    }
+}
